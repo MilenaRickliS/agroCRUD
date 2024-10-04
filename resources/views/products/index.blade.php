@@ -7,7 +7,9 @@
             <h2>{{ $product->name }}</h2>
             <p>{{ $product->description }}</p>
             <p>R$ {{ number_format($product->price, 2, ',', '.') }}</p>
-            
         </div>
+
+        
     @endforeach
+    <a href="/create">Criar Produto</a>
 @endsection
