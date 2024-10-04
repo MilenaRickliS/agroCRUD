@@ -2,14 +2,14 @@
 
 @section('content')
     <h1>Editar Produto</h1>
-    <form action="{{ route('products.update', $product->id)) }}" method="post">
+    <form action="{{ url('products/' . $product->id) }}">
         @csrf
         @method('PUT')
         <label for="name">Nome:</label>
         <input type="text" name="name" id="name" value="{{$product->name}}" required>
         <br>
         <label for="description">Descrição:</label>
-        <textarea name="description" id="description" value="{{$product->description}}"></textarea>
+        <textarea name="description" id="description">{{$product->description}}</textarea>
         <br>
         <label for="price">Preço:</label>
 

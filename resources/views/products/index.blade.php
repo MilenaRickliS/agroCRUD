@@ -8,10 +8,10 @@
             <p>{{ $product->description }}</p>
             <p>R$ {{ number_format($product->price, 2, ',', '.') }}</p>
 
-            <a href="/products/{id}/edit">Editar Produto</a>
+            <a href="{{ route('products.edit', $product->id) }}">Editar Produto</a>
         </div>
 
         
     @endforeach
-    <a href="/create">Criar Produto</a>
+    <a href="{{ route('products.create') }}">Criar Produto</a>
 @endsection
