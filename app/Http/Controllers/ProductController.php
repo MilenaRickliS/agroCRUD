@@ -26,14 +26,21 @@ public function store(Request $request)
     return redirect()->route('products.index');
 }
 
-public function edit(Product $product)
+public function edit($id)
 {
+    $product = Product::find($id);
     return view('products.edit', compact('product'));
 }
 
-public function update(Request $request, Product $product)
+public function update(Request $request, $id)
 {
-    $product->update($request->all());
+    $validatedData = $request->validate([
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'price' => 'required|numeric',
+    ]);
+    $product = Product::find($id);
+    $product->update($validatedData);
     return redirect()->route('products.index');
 }
 

@@ -2,7 +2,8 @@
 
 @section('content')
     <h1>Editar Produto</h1>
-    <form action="{{ route('products.update', $product->id) }}" method="post">
+    @if(isset($product) && $product->id)
+    <form action="{{ route('products.update', ['id' => $product->id]) }}" method="post">
         @csrf
         @method('PUT')
         <label for="name">Nome:</label>
@@ -17,6 +18,9 @@
         <br>
         <button type="submit">Salvar</button>
     </form>
+    @else
+        <p>Product not found.</p>
+    @endif
 @endsection
 
 
