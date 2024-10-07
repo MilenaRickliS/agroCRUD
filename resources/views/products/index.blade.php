@@ -9,6 +9,11 @@
             <p>R$ {{ number_format($product->price, 2, ',', '.') }}</p>
 
             <a href="{{ route('products.edit', $product->id) }}">Editar Produto</a>
+            <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Excluir Produto</button>
+            </form>
         </div>
 
         
