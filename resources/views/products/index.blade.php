@@ -10,6 +10,7 @@
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             margin: 10px;
             padding: 20px;
+            border-radius: 15px;
         }
         .editar{
             background-color: #FDFF99;
