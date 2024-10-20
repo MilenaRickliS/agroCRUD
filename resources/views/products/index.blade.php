@@ -2,7 +2,9 @@
 
     @section('content')
     <h1>Lista de Produtos</h1>
-    <a class="criar" href="{{ route('products.create') }}">Criar Produto</a>
+    <div class="button-container">
+        <a class="criar" href="{{ route('products.create') }}">Criar Produto</a>
+    </div>
     <div class="produtos">
     @foreach ($products as $product)
         <div class="prod">

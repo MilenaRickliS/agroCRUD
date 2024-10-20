@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<br>
+<a href="{{ route('products.index') }}" class="voltar" ><-- Voltar para lista de produtos</a>
     <h1>Criar Produto</h1>
     <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data" class="formulario">
         @csrf
@@ -27,5 +29,4 @@
         </div>
     @endif
     </form>
-    <a href="{{ route('products.index') }}" class="btn btn-secondary voltar" ><-- Voltar para lista de produtos</a>
 @endsection

@@ -1,4 +1,8 @@
 <style>
+    h1{
+    margin: 0 auto;
+    text-align: center;
+}
 .logout{
     border-radius: 20px;
     border: none;
@@ -52,9 +56,14 @@
 }
 .voltar{
     background-color: #aec200;
+    color: #fff;
+    padding: 8px;
+    border-radius: 20px;
 }
 .voltar:hover{
     background-color: #6e8117;
+    text-decoration: none;
+    color: #fff;
 }
 
 </style>
@@ -62,8 +71,10 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <h1>Editar Produto</h1>
+<br>
+<a href="{{ route('products.index') }}" class="voltar" ><-- Voltar para lista de produtos</a>
+<br>  <br>  
+<h1>Editar Produto</h1>
     @if(isset($product) && $product->id)
     <form action="{{ route('products.update', ['id' => $product->id]) }}" method="post" enctype="multipart/form-data" class="formulario">
         @csrf
@@ -92,5 +103,4 @@
     @else
         <p>Product not found.</p>
     @endif
-    <a href="{{ route('products.index') }}" class="btn btn-secondary voltar"><-- Voltar para lista de produtos</a>
 @endsection
