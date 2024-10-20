@@ -6,6 +6,7 @@
 /storage/*.key
 .phpactor.json
 .phpunit.result.cache
+/vendor
 Homestead.json
 Homestead.yaml
 auth.json
